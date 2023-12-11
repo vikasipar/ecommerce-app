@@ -24,5 +24,4 @@ dist-ssr
 *.sw?
 
 # Mine
-Filterbar.jsx
 ProductDetails.jsx
