@@ -9,7 +9,7 @@ function CardSkeleton() {
         <div className='flex-column justify-center'>
             <div className='w-[200px] h-[24px] bg-slate-300 rounded'></div>
             <div className='w-[100px] h-[24px] bg-slate-300 my-2 mx-auto rounded'></div>
-            {/* <div className='w-full mx-auto h-[30px] bg-slate-300'></div> */}
+            <div className='w-[150px] mx-auto h-[24px] bg-slate-300 rounded-lg'></div>
         </div>
     </div>
   )

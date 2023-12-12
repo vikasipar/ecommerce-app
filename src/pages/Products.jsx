@@ -1,19 +1,29 @@
 import React, { useState, useEffect } from 'react';
+// import { useParams } from 'react-router-dom';
 import Card from '../components/Card';
 import CardSkeleton from '../components/CardSkeleton';
 import Filterbar from '../components/Filterbar';
+import Navbar from '../components/Navbar';
 
 function Products() {
     const[products, setProducts] = useState([]);
     const [select, setSelect] = useState("All Products");
     const [isLoading, setIsLoading] = useState(false);
 
+    // let {category} = useParams();
+
   useEffect(() => {
     setIsLoading(true);
+
+    // if(category != select){
+    //   setSelect(category);
+    // }
+
     // created two urls for products filtering purpose
     const apiUrl = select !== "All Products"
     ? `https://fakestoreapi.com/products/category/${select}`
     : 'https://fakestoreapi.com/products';
+
    // Fetch products from the API
     fetch(apiUrl)
       .then((res) => res.json())
@@ -32,7 +42,7 @@ const handleClick = (category) =>{
 
   return (
     <div>
-      {/* <h1>Product List</h1> */}
+      <Navbar />
 
       <Filterbar select={select} handleClick={handleClick}/>
       
