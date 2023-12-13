@@ -2,9 +2,9 @@ import React from 'react';
 
 function Footer() {
   return (
-    <div className='md:h-60 mx-2 mt-1 px-4 md:pt-5 md:flex justify-between border-2 bg-stone-700 text-white overflow-hidden'>
+    <div className='md:h-60 mt-1 px-4 md:pt-5 md:flex justify-between border-2 bg-stone-700 text-white overflow-hidden'>
         <div className='flex-col md:w-[40%] mx-auto mt-5'>
-            <h1 className='text-3xl font-bold my-2 text-yellow-300'>LOGO</h1>
+            <h1 className='text-3xl font-bold my-2 text-green-400 font-serif'>ezmart</h1>
             <span>copyright 2023 @vikas_ip</span>
         </div>
         <div className='flex-col md:w-[50%] h-full my-7 space-y-5 mx-auto text-center md:text-justify'>

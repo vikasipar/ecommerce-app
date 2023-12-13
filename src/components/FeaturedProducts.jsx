@@ -10,8 +10,7 @@ function FeaturedProducts() {
     useEffect(() => {
         setIsLoading(true);
     
-       // Fetch products from the API
-        fetch(`https://fakestoreapi.com/products/category/men's clothing`)
+        fetch(`https://fakestoreapi.com/products?limit=8`)
           .then((res) => res.json())
           .then((data) => {
             setData(data);
@@ -22,9 +21,9 @@ function FeaturedProducts() {
       }, []);
 
   return (
-    <div className='m-2'>
-        <h1 className='text-3xl font-bold'>FeaturedProducts</h1>
-        <div className='w-[90vw] mx-[5vw] flex flex-wrap'>
+    <div className='m-4'>
+        <h1 className='text-3xl font-bold'>Featured Products</h1>
+        <div className='w-[90vw] mx-auto flex flex-wrap'>
         {isLoading ? 
             <div className='w-full flex flex-wrap justify-around mx-auto'> 
                 <CardSkeleton /> <CardSkeleton /> <CardSkeleton /> <CardSkeleton />

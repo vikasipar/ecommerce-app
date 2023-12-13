@@ -1,23 +1,17 @@
 import React, { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
 import Card from '../components/Card';
 import CardSkeleton from '../components/CardSkeleton';
 import Filterbar from '../components/Filterbar';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function Products() {
     const[products, setProducts] = useState([]);
     const [select, setSelect] = useState("All Products");
     const [isLoading, setIsLoading] = useState(false);
 
-    // let {category} = useParams();
-
   useEffect(() => {
     setIsLoading(true);
-
-    // if(category != select){
-    //   setSelect(category);
-    // }
 
     // created two urls for products filtering purpose
     const apiUrl = select !== "All Products"
@@ -32,7 +26,6 @@ function Products() {
         setIsLoading(false);
       })
       .catch((error) => console.error('Error fetching products:', error));
-
       
   }, [select]);
 
@@ -64,6 +57,7 @@ const handleClick = (category) =>{
             }} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import StarRating from '../components/StarRating';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function ProductDetails() {
   const { id } = useParams();
@@ -41,6 +42,7 @@ function ProductDetails() {
         </div>
       </div>
     }
+    <Footer />
     </>
   )
 }
