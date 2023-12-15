@@ -15,7 +15,7 @@ function StarRating(props) {
         return stars;
     }
   return (
-    <div className='flex w-full justify-center mt-3 text-xl'>{renderStars()}</div>
+    <div className='flex w-full justify-center mt-3 text-xl text-[#ffbf00] hover:text-[#ffa500]'>{renderStars()}</div>
   )
 }
 

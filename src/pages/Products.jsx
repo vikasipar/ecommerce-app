@@ -35,8 +35,6 @@ const handleClick = (category) =>{
 
   return (
     <div>
-      <Navbar />
-
       <Filterbar select={select} handleClick={handleClick}/>
       
       <div className='w-[90vw] mx-[5vw] flex flex-wrap'>
@@ -57,7 +55,6 @@ const handleClick = (category) =>{
             }} />
         ))}
       </div>
-      <Footer />
     </div>
   );
 }

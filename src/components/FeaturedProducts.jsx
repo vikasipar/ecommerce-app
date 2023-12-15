@@ -14,7 +14,6 @@ function FeaturedProducts() {
           .then((res) => res.json())
           .then((data) => {
             setData(data);
-            console.log(data);
             setIsLoading(false);
           })
           .catch((error) => console.error('Error fetching products:', error));
@@ -41,7 +40,7 @@ function FeaturedProducts() {
             }} />
         ))}
         </div>
-        <div className='text-center text-lg font-semibold text-blue-600'>
+        <div className='text-center text-lg font-semibold text-[#112ccae5]'>
             <Link to="/products">view all</Link>
         </div>
     </div>
