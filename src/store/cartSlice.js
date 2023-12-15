@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "sonner";
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -9,8 +10,15 @@ const cartSlice = createSlice({
             existingProduct ? 
             existingProduct.quantity += 1 :
             state.push({...action.payload,quantity:1});
+            toast.success("product added successfully!", {
+                position: "bottom-right",
+                theme: "dark",
+            });
         },
         removeFromCart(state, action){
+            toast.warning("product removed successfully!",{
+                position: "bottom-right",
+            });
             return state.filter(item => item.key != action.payload);
         },
         increaseQuantity(state, action){

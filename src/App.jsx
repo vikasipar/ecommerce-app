@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { Toaster } from 'sonner';
 import store from './store/store';
 import Products from './pages/Products';
 import ProductDetails from './pages/ProductDetails';
@@ -12,6 +13,12 @@ import Footer from './components/Footer';
 function App() {
   return (
     <BrowserRouter>
+    <Toaster 
+      toastOptions={{
+        // style:{backgroundColor:'black', color:'white',},
+        style:{backgroundColor:'rgba(30, 30, 30, 0.9)', color:'whitesmoke',fontSize:'1rem'},
+      }} 
+      />
     <Provider store={store}>
       <Navbar />
       <Routes>
