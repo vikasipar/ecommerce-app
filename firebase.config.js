@@ -1,16 +1,14 @@
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
 import { getAuth } from "firebase/auth";
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAABHPPPBmNMDNZM0ajTQv52H4dJ6iQrwE",
-  authDomain: "ezmart-8f9a1.firebaseapp.com",
-  projectId: "ezmart-8f9a1",
-  storageBucket: "ezmart-8f9a1.appspot.com",
-  messagingSenderId: "185516774327",
-  appId: "1:185516774327:web:c3c1cd50839701215f8e32"
+  apiKey: import.meta.env.VITE_FIREBASE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MSG_SENDERID,
+  appId: import.meta.env.VITE_APP_ID
 };
 
 // Initialize Firebase

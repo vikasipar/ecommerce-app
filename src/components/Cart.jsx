@@ -1,16 +1,19 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { MdDeleteForever } from "react-icons/md";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import { FaTimes } from "react-icons/fa";
 import { BsCartX } from "react-icons/bs";
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../store/cartSlice';
+import { Link } from 'react-router-dom';
 
 function Cart() {
 
   const products = useSelector(state => {
     return state.cart;
   });
+
+  // for protected checkout 
+  const usertoken = useSelector(state => state.auth);
   
   const dispatch = useDispatch();
 
@@ -62,7 +65,7 @@ function Cart() {
       }
       { products.length>0 && <div className='font-semibold text-xl pt-2 border-t-4 border-stone-500'>
         <div className='flex justify-between mx-16'><span>Total Amount:</span> <span>${totalAmount.toFixed(2)}</span></div>
-        <button className='border-2 w-[90%] mx-[5%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-white rounded-md text-sm'>Proceed to Checkout</button>
+        <Link to={usertoken.token !== null ? '/checkout': '/auth'}><button className='border-2 w-[90%] mx-[5%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 rounded-md text-sm font-semibold'>Proceed to Checkout</button></Link>
       </div>}
     </div>
   )
