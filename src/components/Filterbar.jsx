@@ -9,7 +9,7 @@ function Filterbar(props) {
         {categories.map((category) => (
             <span key={category} 
             onClick={() => props.handleClick(category)}
-            className={`border-2 cursor-pointer px-5 border-gray-900 ${props.select===category ? ' bg-stone-700 text-white' : 'border-stone-700 text-gray-900'}`}>{category[0].toUpperCase()+category.slice(1)}</span>
+            className={`border-2 cursor-pointer px-5 rounded border-gray-900 ${props.select===category ? ' bg-rgba-dark-90 text-white' : 'border-stone-700/90 text-gray-900'}`}>{category[0].toUpperCase()+category.slice(1)}</span>
         ))}
       </div>
   )

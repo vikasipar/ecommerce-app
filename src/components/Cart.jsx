@@ -4,6 +4,7 @@ import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import { FaTimes } from "react-icons/fa";
 import { BsCartX } from "react-icons/bs";
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../store/cartSlice';
+import { toggleCart } from '../store/authSlice';
 import { Link } from 'react-router-dom';
 
 function Cart() {
@@ -33,7 +34,7 @@ function Cart() {
       <div>
         {products.length>0 ?
         <div>
-          <h3 className='uppercase font-semibold text-2xl text-stone-600'>Items in your bag</h3>
+          <h3 className='uppercase font-semibold text-2xl text-stone-600'>Items in your cart</h3>
         </div> 
         :
         <div className='text-center space-y-9'>
@@ -43,7 +44,9 @@ function Cart() {
             <p>Must add items on the cart before you proceed to ckeck out.</p>
           </div>
             {/* need change in code - add variable isCartVisible in redux store */}
-          <button className='border-2 w-[35%] py-3 uppercase bg-stone-600 hover:bg-stone-700 text-white rounded-md text-sm'>Return to shop</button>
+            <Link to={'/products'} >
+          <button className='border-2 w-[80%] mx-[10%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 rounded-md text-sm font-semibold' onClick={() => dispatch(toggleCart())}>Return to shop</button>
+          </Link>
         </div>
         }
       </div>
@@ -65,7 +68,7 @@ function Cart() {
       }
       { products.length>0 && <div className='font-semibold text-xl pt-2 border-t-4 border-stone-500'>
         <div className='flex justify-between mx-16'><span>Total Amount:</span> <span>${totalAmount.toFixed(2)}</span></div>
-        <Link to={usertoken.token !== null ? '/checkout': '/auth'}><button className='border-2 w-[90%] mx-[5%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 rounded-md text-sm font-semibold'>Proceed to Checkout</button></Link>
+        <Link to={usertoken.token !== null ? '/checkout': '/auth'}><button onClick={() => dispatch(toggleCart())} className='border-2 w-[90%] mx-[5%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 rounded-md text-sm font-semibold'>Proceed to Checkout</button></Link>
       </div>}
     </div>
   )

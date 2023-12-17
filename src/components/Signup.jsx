@@ -40,20 +40,16 @@ function Signup() {
         <form onSubmit={handleSignup} className='space-y-5'>
             <div className='space-y-3'>
                 <div className='flex justify-between'>
-                    <label htmlFor="name">Name </label>
-                    <input type="text" id='name' className='border-2 border-stone-500 rounded' onChange={(e) => setName(e.target.value)} required />
-                </div>
-                <div className='flex justify-between'>
                     <label htmlFor="email">Email </label>
-                    <input type="email" id='email' className='border-2 border-stone-500 rounded' onChange={(e) => setEmail(e.target.value)} required />
+                    <input type="email" id='email' className='px-2 py-1 text-lg border-2 border-stone-500 rounded' onChange={(e) => setEmail(e.target.value)} required />
                 </div>
                 <div className='flex justify-between'>
                     <label htmlFor="password">Password </label>
-                    <input type="password" id='password' className='border-2 border-stone-500 rounded' onChange={(e) => setPassword(e.target.value)} required />
+                    <input type="password" id='password' className='px-2 py-1 text-lg border-2 border-stone-500 rounded' onChange={(e) => setPassword(e.target.value)} required />
                 </div>
                 <div className='flex justify-between'>
                     <label htmlFor="cpassword">Confirm Password &nbsp;</label>
-                    <input type="password" id='cpassword' className='border-2 border-stone-500 rounded' onChange={(e) => setCpassword(e.target.value)} required />
+                    <input type="password" id='cpassword' className='px-2 py-1 text-lg border-2 border-stone-500 rounded' onChange={(e) => setCpassword(e.target.value)} required />
                 </div>
             </div>
             <div>
