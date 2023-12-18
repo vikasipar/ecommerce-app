@@ -5,7 +5,7 @@ import { HiBadgeCheck } from "react-icons/hi";
 
 function Features() {
   return (
-    <div className='flex justify-around text-center mx-5 my-28 space-x-28 items-center text-stone-700'>
+    <div className='md:flex justify-center md:justify-around text-center mx-5 my-28 space-y-14 md:space-y-0 md:space-x-28 items-center text-stone-700'>
         <div>
             <div className='text-5xl w-max mx-auto text-[#ffbf00]'><BiSolidOffer /></div>
             <h2 className='text-2xl font-bold'>Season Sale</h2>

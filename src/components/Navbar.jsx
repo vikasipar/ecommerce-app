@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 import { BsCart3 } from "react-icons/bs";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase.config';
 import { useSelector, useDispatch } from 'react-redux';
@@ -34,15 +34,15 @@ function Navbar() {
         <div className='w-[30%] font-semibold text-2xl text-[#eee600] font-serif'><Link to={'/'}>ezmart</Link></div>
         <div className='w-[55%] flex justify-between items-center font-semibold'>
             <div className='hidden md:flex w-[60%] ustify-around text-stone-200 text-md font-normal space-x-10'>
-                <Link to={'/'} ><span className='hover:text-[#eee600]'>Home</span></Link>
-                <Link to={'/products'} ><span className='hover:text-[#eee600]'>Categories</span></Link>
+                <NavLink to={'/'} ><span className='hover:text-[#eee600]'>Home</span></NavLink>
+                <NavLink to={'/products'} ><span className='hover:text-[#eee600]'>Categories</span></NavLink>
                 <span className='hover:text-[#eee600] cursor-pointer'>About</span>
             </div>
             <div className='md:w-[22%] flex justify-end md:justify-around text-2xl text-white'>
                 {
                     usertoken !== null ?
-                        <span onClick={handleLogout} className='bg-[#eee600] hover:bg-[#ffbf00] text-base text-stone-900 py-[2px] px-2 cursor-pointer rounded font-semibold hidden md:block'>Logout</span> :
-                        <Link to={'/auth'}><button className='bg-[#eee600] hover:bg-[#ffbf00] text-base text-stone-900 font-semibold py-[2px] px-2 rounded hidden md:block'>Sign In</button></Link>
+                        <span onClick={handleLogout} className='text-base text-[#eee600] cursor-pointer font-semibold hidden md:block'>Logout</span> :
+                        <Link to={'/auth'}><button className='text-base text-[#eee600] font-semibold hidden md:block'>Sign In</button></Link>
                 }
                 <span className='flex'>
                     <BsCart3 className='cursor-pointer hidden md:block' onClick={() => dispatch(toggleCart())}/>
