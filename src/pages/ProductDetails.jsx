@@ -32,16 +32,20 @@ function ProductDetails() {
         <div className="animate-spin rounded-full border-t-4 border-black border-solid h-14 w-14"></div>
       </div>
     :
-      <div className='flex h-[100vh] w-[85%] my-auto mx-auto items-center '>
-        <div className='w-[50%] text-left'>
-          <h1 className='text-[2.8rem] text-gray-900 font-extrabold'>{product.title}</h1>
-          <p className='text-2xl uppercase font-bold text-gray-500 my-2'>{product.category}</p>
-          <p className='text-justify text-gray-800'>{product.description}</p>
-          <h3 className='text-[2.5rem] uppercase font-bold text-gray-900'>${product.price}</h3>
-          {product.rating && <span className='flex items-end w-[20%] mx-0'><StarRating  rating={product.rating.rate} /> <span className='text-gray-500 text-sm'>{product.rating.count}</span></span>}
-          <button onClick={() => addToCartHandler(product)} className='w-[45%] py-2 border-2 bg-gray-950 mt-7 text-xl font-semibold text-white uppercase'>Add To Cart</button>
+      <div className='md:flex md:h-[100vh] w-[90%] md:w-[85%] my-auto mx-auto items-center'>
+        <div className='md:w-[50%] text-left'>
+          <img className='md:hidden w-[55%] mx-auto' src={`${product.image}`} alt={id} />
+          <p className='md:text-2xl uppercase font-bold text-gray-500 my-2'>{product.category}</p>
+          <h1 className='text-2xl md:text-[2.8rem] text-gray-900 font-extrabold leading-tight'>{product.title}</h1>
+          {product.rating && <span className='flex md:hidden items-end w-[20%] mx-0'><StarRating  rating={product.rating.rate} /> <span className='text-gray-500 text-sm'>{product.rating.count}</span></span>}
+          <h3 className='block md:hidden text-[1.8rem] uppercase font-bold text-gray-900'>${product.price}</h3>
+          <button onClick={() => addToCartHandler(product)} className='block md:hidden w-[45%] py-1 bg-gray-950 my-1 text-base font-semibold text-white uppercase'>Add To Cart</button>
+          <p className='my-3 md:my-auto text-justify text-gray-800'>{product.description}</p>
+          <h3 className='hidden md:block md:text-[2.5rem] uppercase font-bold text-gray-900'>${product.price}</h3>
+          {product.rating && <span className='hidden md:flex items-end w-[20%] mx-0'><StarRating  rating={product.rating.rate} /> <span className='text-gray-500 text-sm'>{product.rating.count}</span></span>}
+          <button onClick={() => addToCartHandler(product)} className='hidden md:block w-[45%] py-2 border-2 bg-gray-950 mt-7 text-xl font-semibold text-white uppercase'>Add To Cart</button>
         </div>
-        <div className='w-[50%]'>
+        <div className='hidden md:block w-[50%]'>
           <img className='w-[65%] mx-auto' src={`${product.image}`} alt={id} />
         </div>
       </div>
