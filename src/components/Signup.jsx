@@ -41,19 +41,19 @@ function Signup() {
             <div className='space-y-3'>
                 <div className='flex justify-between'>
                     <label htmlFor="email">Email </label>
-                    <input type="email" id='email' className='px-2 py-1 text-lg border-2 border-stone-500 rounded' onChange={(e) => setEmail(e.target.value)} required />
+                    <input type="email" id='email' className='px-2 py-1 text-sm sm:text-base md:text-lg border-2 border-stone-500 rounded' onChange={(e) => setEmail(e.target.value)} required />
                 </div>
                 <div className='flex justify-between'>
                     <label htmlFor="password">Password </label>
-                    <input type="password" id='password' className='px-2 py-1 text-lg border-2 border-stone-500 rounded' onChange={(e) => setPassword(e.target.value)} required />
+                    <input type="password" id='password' className='px-2 py-1 text-sm sm:text-base md:text-lg border-2 border-stone-500 rounded' onChange={(e) => setPassword(e.target.value)} required />
                 </div>
                 <div className='flex justify-between'>
-                    <label htmlFor="cpassword">Confirm Password &nbsp;</label>
-                    <input type="password" id='cpassword' className='px-2 py-1 text-lg border-2 border-stone-500 rounded' onChange={(e) => setCpassword(e.target.value)} required />
+                    <label htmlFor="cpassword" className='text-left'>Confirm Password &nbsp;</label>
+                    <input type="password" id='cpassword' className='px-2 py-1 text-sm sm:text-base h-min md:text-lg border-2 border-stone-500 rounded' onChange={(e) => setCpassword(e.target.value)} required />
                 </div>
             </div>
             <div>
-                <button type='submit' className='bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 font-semibold text-lg w-full py-2 px-5 rounded'>Sign up</button>
+                <button type='submit' className='bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 font-semibold text-base md:text-lg w-full py-2 px-5 rounded'>Sign up</button>
             </div>
         </form>
     </div>

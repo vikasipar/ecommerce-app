@@ -34,16 +34,16 @@ function Login() {
         <form onSubmit={handleLogin} className='space-y-9 text-left'>
           <div className='space-y-3'>
               <div className='flex justify-between'>
-                  <label htmlFor="email" className='w-[90px]'>Email </label>
-                  <input type="email" id='email' className='px-2 py-1 text-lg border-2 border-stone-500 rounded' onChange={(e) => setEmail(e.target.value)} />
+                  <label htmlFor="email" className='w-[70px] sm:w-[90px]'>Email </label>
+                  <input type="email" id='email' className='px-2 py-1 text-sm sm:text-base md:text-lg border-2 border-stone-500 rounded' onChange={(e) => setEmail(e.target.value)} required />
               </div>
               <div className='flex justify-between'>
-                  <label htmlFor="password" className='w-[90px]'>Password </label>
-                  <input type="password" id='password' className='px-2 py-1 text-lg border-2 border-stone-500 rounded' onChange={(e) => setPassword(e.target.value)} />
+                  <label htmlFor="password" className='w-[70px] sm:w-[90px]'>Password </label>
+                  <input type="password" id='password' className='px-2 py-1 text-sm sm:text-base md:text-lg border-2 border-stone-500 rounded' onChange={(e) => setPassword(e.target.value)} required />
               </div>
             </div>
             <div>
-              <button type='button' onClick={handleLogin} className='w-full bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 font-semibold text-lg py-2 px-5 rounded'>Log In</button>
+              <button type='button' onClick={handleLogin} className='w-full bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 font-semibold md:text-lg py-2 px-5 rounded'>Log In</button>
             </div>
         </form>
     </div>
