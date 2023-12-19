@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,9 +11,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import UserAuth from './pages/UserAuth';
 import Checkout from './pages/Checkout';
+import { useSelector } from 'react-redux';
 
 function App() {
-    
+    const usertoken = useSelector(state => state.auth.token);
+
   return (
     <BrowserRouter>
     <ToastContainer />
@@ -28,7 +30,7 @@ function App() {
         <Route path='/products' element={<Products />} />
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/auth' element={<UserAuth />} />
-        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/checkout' element={usertoken !== null ? <Checkout /> : <Navigate to={'/auth'} />} />
         <Route path='/*' element={<Page404 />} />
       </Routes>
       <Footer />

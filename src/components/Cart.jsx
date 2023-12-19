@@ -13,9 +13,6 @@ function Cart() {
     return state.cart;
   });
 
-  // for protected checkout 
-  const usertoken = useSelector(state => state.auth);
-  
   const dispatch = useDispatch();
 
   const removeFromCartHandler = (id) =>{
@@ -43,7 +40,6 @@ function Cart() {
             <h3 className='text-3xl my-4'>Your Cart Is <span className='text-red-600'>Empty!</span></h3>
             <p>Must add items on the cart before you proceed to ckeck out.</p>
           </div>
-            {/* need change in code - add variable isCartVisible in redux store */}
             <Link to={'/products'} >
           <button className='border-2 w-[80%] mx-[10%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 rounded-md text-sm font-semibold' onClick={() => dispatch(toggleCart())}>Return to shop</button>
           </Link>
@@ -68,7 +64,7 @@ function Cart() {
       }
       { products.length>0 && <div className='font-semibold text-xl pt-2 border-t-4 border-stone-500'>
         <div className='flex justify-between mx-16'><span>Total Amount:</span> <span>${totalAmount.toFixed(2)}</span></div>
-        <Link to={usertoken.token !== null ? '/checkout': '/auth'}><button onClick={() => dispatch(toggleCart())} className='border-2 w-[90%] mx-[5%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 rounded-md text-sm font-semibold'>Proceed to Checkout</button></Link>
+        <Link to={'/checkout'}><button onClick={() => dispatch(toggleCart())} className='border-2 w-[90%] mx-[5%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 rounded-md text-sm font-semibold'>Proceed to Checkout</button></Link>
       </div>}
     </div>
   )

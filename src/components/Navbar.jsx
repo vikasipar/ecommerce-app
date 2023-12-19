@@ -12,7 +12,7 @@ function Navbar() {
 
     //for logout purpose
     const dispatch = useDispatch();
-    const usertoken = useSelector(state => state.auth.token);
+    const usertoken = useSelector(state => state.auth.token);    // useful for fast render after login-logout events because localstorage take time to retrieve values
 
     const items = useSelector(state => state.cart);
     const isCartVisible = useSelector(state => state.auth.isCartVisible);
@@ -21,7 +21,7 @@ function Navbar() {
         try{
             await signOut(auth);
             dispatch(clearAuth());
-            localStorage.removeItem('token');  // storing/removing token from localstorage but not using it
+            localStorage.removeItem('token');  // storing/removing token from localstorage but not using it because it rerenders very slow
             toast.warning("logged out successfully!");
         }catch(err){
             console.error("Signout Error ", err.message);
