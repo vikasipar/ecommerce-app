@@ -23,7 +23,7 @@ function Carousel({children: slides }) {
         <div className='flex transition-transform ease-out duration-500' style={{ transform: `translateX(-${currentImage*100}%)` }}>
             {slides}
         </div>
-        <div className='absolute inset-0 flex items-center justify-between p-4'>
+        <div className='absolute z-1 inset-0 flex items-center justify-between p-4'>
             <button onClick={prevImage} className='p-1 rounded-full shadow bg-slate-500 text-white hover:bg-black'>
                 <FaArrowLeft />
             </button>
