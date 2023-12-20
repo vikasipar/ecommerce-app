@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="w-[90%] md:w-full">
             <Carousel>
                 {slides.map((s, index) => (
-                    <img key={index} src={s} alt={`slide ${index+1}`} className="w-full h-[300px] object-cover object-right md:w-full md:h-full" />
+                    <img key={index} src={s} alt={`slide ${index+1}`} className="w-full h-[300px] object-cover object-left border-r-8 md:border-none border-white md:w-full md:h-full" />
                 ))}
             </Carousel>
         </div>

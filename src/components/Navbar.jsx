@@ -10,7 +10,7 @@ import { clearAuth, toggleCart } from '../store/authSlice';
 import Cart from './Cart';
 
 function Navbar() {
-    const [isNavVisible, setIsNavVisible] = useState(false);
+    const [isNavVisible, setIsNavVisible] = useState(true);
 
     //for logout purpose
     const dispatch = useDispatch();
@@ -23,6 +23,7 @@ function Navbar() {
         try{
             await signOut(auth);
             dispatch(clearAuth());
+            setIsNavVisible(!isNavVisible);
             localStorage.removeItem('token');  // storing/removing token from localstorage but not using it because it rerenders very slow
             toast.warning("logged out successfully!");
         }catch(err){
@@ -32,7 +33,7 @@ function Navbar() {
     }
 
   return (
-    <div className='w-screen md:w-full mb-5 my-1 py-1 px-5 flex justify-between items-center bg-rgba-dark-90 text-white relative'>
+    <div className='w-screen md:w-full mb-1 py-1 px-5 flex justify-between items-center bg-stone-950/90 text-white relative'>
         <span className= 'cursor-pointer block sm:hidden' onClick={() => setIsNavVisible(!isNavVisible)}>
             {
                 isNavVisible ? 
@@ -61,7 +62,7 @@ function Navbar() {
         </div>
 
         {/* for responsiveness */}
-        <div className= {`sm:hidden w-full h-screen bg-stone-800/90 text-stone-200 absolute top-11 left-0 text-center text-xl pt-14 leading-[3] z-10 ${isNavVisible ? 'hidden' : 'block' }`}>
+        <div className= {`sm:hidden w-full h-screen bg-stone-950/90 text-stone-200 absolute top-11 left-0 text-center text-xl pt-14 leading-[3] z-20 ${isNavVisible ? 'hidden' : 'block' }`}>
             <NavLink to={'/'} ><div className='hover:text-[#eeb600]' onClick={() => setIsNavVisible(!isNavVisible)}>Home</div></NavLink>
             <NavLink to={'/products'} ><div className='hover:text-[#eeb600]' onClick={() => setIsNavVisible(!isNavVisible)}>Categories</div></NavLink>
             <div className='hover:text-[#eeb600] cursor-pointer'>About</div>

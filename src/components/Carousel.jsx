@@ -24,10 +24,10 @@ function Carousel({children: slides }) {
             {slides}
         </div>
         <div className='absolute z-1 inset-0 flex items-center justify-between p-4'>
-            <button onClick={prevImage} className='p-1 rounded-full shadow bg-slate-500 text-white hover:bg-black'>
+            <button onClick={prevImage} className='p-1 rounded-full shadow bg-slate-600/60 text-white/80 hover:bg-black'>
                 <FaArrowLeft />
             </button>
-            <button onClick={nextImage} className='p-1 rounded-full shadow bg-slate-500 text-white hover:bg-black'>
+            <button onClick={nextImage} className='p-1 rounded-full shadow bg-slate-500/60 text-white/80 hover:bg-black'>
                 <FaArrowRight />
             </button>
         </div>

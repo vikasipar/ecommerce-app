@@ -27,7 +27,7 @@ function Cart() {
   }, 0);
 
   return (
-    <div className={`w-screen overflow-scroll md:w-[45vw] {products.length > 5 ? h-screen : h-max} p-5 top-11 right-0 absolute z-10 bg-stone-100 text-black shadow-2xl shadow-stone-950 transition ease-out space-y-2`}>
+    <div className={`w-screen overflow-scroll md:w-[45vw] h-screen p-5 top-11 right-0 absolute z-10 bg-stone-100 text-black shadow-2xl shadow-stone-950 transition ease-out space-y-2`}>
       <div>
         {products.length>0 ?
         <div>
@@ -53,7 +53,8 @@ function Cart() {
             <img src={product.src} alt={product.key} className='w-[80px]' />
             </div>
             <div className='font-semibold flex-col w-[40%]'>
-              <h3>{!product.name.length>20 ? product.name : product.name.substring(0, 20) }</h3>
+              {/* <h3>{!product.name.length>20 ? product.name : product.name.substring(0, 20) }</h3> */}
+              <h3>{product.name && product.name.length > 20 ? product.name : (product.name ? product.name.substring(0, 20) : '')}</h3>
               <h3>${product.price}</h3>
             </div>
             <div className='flex items-center space-x-2 w-[15%]'> <IoMdRemove className='text-[#ffa500] cursor-pointer' onClick={() => decreaseQuantityHandler(product.key)} /> <span>{product.quantity}</span> <IoMdAdd className='text-[#ffa500] cursor-pointer' onClick={() => increaseQuantityHandler(product.key)} /></div>
@@ -62,9 +63,9 @@ function Cart() {
           </div>
         ))
       }
-      { products.length>0 && <div className='font-semibold text-xl pt-2 border-t-4 border-stone-500'>
-        <div className='flex justify-between mx-16'><span>Total Amount:</span> <span>${totalAmount.toFixed(2)}</span></div>
-        <Link to={'/checkout'}><button onClick={() => dispatch(toggleCart())} className='border-2 w-[90%] mx-[5%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 rounded-md text-sm font-semibold'>Proceed to Checkout</button></Link>
+      { products && products.length > 0 && <div className='font-semibold text-xl pt-2 border-t-4 border-stone-500'>
+        <div className='flex justify-between sm:mx-16'><span>Total Amount:</span> <span>${totalAmount.toFixed(2)}</span></div>
+        <Link to={'/checkout'}><button onClick={() =>  dispatch(toggleCart())} className='border-2 w-[90%] mx-[5%] mt-9 py-3 uppercase bg-[#ffbf00] hover:bg-[#ffa500] text-stone-900 rounded-md text-sm font-semibold'>Proceed to Checkout</button></Link>
       </div>}
     </div>
   )

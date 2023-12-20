@@ -30,7 +30,7 @@ function Card(props) {
                 <div className='flex items-end w-[60%] mx-auto'><StarRating  rating={props.item.rating.rate} /> <span className='text-gray-500 text-sm'>({props.item.rating.count})</span></div>
             </div>
         </Link>
-        <button onClick={() => addToCartHandler(props.item)} className='w-full h-[40px] border-2 bg-stone-700/90 hover:bg-stone-800/90 rounded mt-3 text-lg text-white uppercase'>Add To Cart</button>
+        <button onClick={() => addToCartHandler(props.item)} className='w-full h-[40px] border-2 bg-stone-700/90 hover:bg-stone-800/90 rounded mt-3 text-lg text-white uppercase shadow-2xl drop-shadow-lg'>Add To Cart</button>
     </div>
   )
 }
