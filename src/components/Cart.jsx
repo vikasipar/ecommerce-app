@@ -27,7 +27,8 @@ function Cart() {
   }, 0);
 
   return (
-    <div className={`w-screen overflow-scroll md:w-[45vw] h-screen p-5 top-11 right-0 absolute z-10 bg-stone-100 text-black shadow-2xl shadow-stone-950 transition ease-out space-y-2`}>
+    <div className={`w-screen overflow-scroll md:w-[45vw] h-screen p-5 top-11 right-0 absolute z-10 bg-stone-100 text-black shadow-2xl shadow-stone-950 transition-opecity opecity-0 animate-fade-in space-y-2  delay-100`}>
+
       <div>
         {products.length>0 ?
         <div>
@@ -53,7 +54,6 @@ function Cart() {
             <img src={product.src} alt={product.key} className='w-[80px]' />
             </div>
             <div className='font-semibold flex-col w-[40%]'>
-              {/* <h3>{!product.name.length>20 ? product.name : product.name.substring(0, 20) }</h3> */}
               <h3>{product.name && product.name.length > 20 ? product.name : (product.name ? product.name.substring(0, 20) : '')}</h3>
               <h3>${product.price}</h3>
             </div>

@@ -5,7 +5,7 @@ function Footer() {
     <div className='md:h-60 mt-1 px-4 md:pt-5 md:flex justify-between bg-stone-800 text-white overflow-hidden'>
         <div className='flex-col md:w-[40%] mx-auto mt-5'>
             <h1 className='text-3xl font-bold my-2 text-[#eee600] font-serif'>ezmart</h1>
-            <span>copyright 2023 @vikas_ip</span>
+            <span>copyright 2023 <a href='https://github.com/vikasipar' target='_blank'>@vikas_ip</a></span>
         </div>
         <div className='flex-col md:w-[50%] h-full my-7 space-y-5 mx-auto text-center md:text-justify'>
             <span className='text-xl font-semibold uppercase'>Discover the Extraordinary</span>
