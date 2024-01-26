@@ -1,4 +1,5 @@
 # <img src="https://cdn-icons-png.flaticon.com/512/726/726496.png" width="39" alt="Ezmart Logo"> &nbsp;&nbsp; ezMart - E-commerce Application
+#### click here to [ 👉 view site](https://ecommerce-app-vikasipar.vercel.app/)
 
 ### Overview
 This project is a dynamic and responsive E-commerce application built using React.js, Redux Toolkit, Tailwind CSS, and integrated with Firebase for user authentication. The application fetches product data from the FakeStoreAPI to simulate a real-world shopping experience.
