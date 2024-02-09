@@ -58,7 +58,7 @@ As a fresh developer, my primary motivation for embarking on this E-commerce App
 
 - **React.js:** A powerful and declarative JavaScript library for building user interfaces.
 
-- **Redux Toolkit:** A set of tools and utilities for efficient state management in React applications.
+- **Redux Toolkit:** A set of tools and utilities for efficient state management in React applications. [Read more](https://medium.com/@vikasipar/understanding-redux-toolkit-a-practical-guide-with-an-e-commerce-application-938cf07d38a0).
   
 - **Tailwind CSS:** A highly customizable, utility-first CSS framework for building modern and responsive user interfaces.
   
